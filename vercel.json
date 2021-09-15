@@ -45,7 +45,6 @@
   "env": {
     "GITHUB_CLIENT_ID": "@vrs-github-client-id",
     "GITHUB_CLIENT_SECRET": "@vrs-github-client-secret",
-    "MONGODB_ATLAS_URI": "@vrs-mongodb-atlas-uri",
-    "STRIPE_SECRET": "@vrs-stripe-secret"
+    "MONGODB_ATLAS_URI": "@vrs-mongodb-atlas-uri"
   }
 }
