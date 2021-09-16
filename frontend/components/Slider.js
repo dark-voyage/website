@@ -72,18 +72,18 @@ class Slider extends Component {
                           opacity: style.o
                         }}
                       >
-                        V R S
+                        G E N E M A T O R
                       </h2>
                     )}
                   </Motion>
-                  <p className="i f5 tracked-mega-l">virtual reality store</p>
-                  <div className="ttu mt3 f4">
-                    <Link href="/store">
-                      <a className="dib ph2 pv1 fw6 white tracked-mega no-underline">
-                        &gt; enter store &lt;
-                      </a>
-                    </Link>
-                  </div>
+                  <p className="i f5 tracked-mega-l">the true representation of pain & suffering</p>
+                  {/*<div className="ttu mt3 f4">*/}
+                  {/*  <Link href="/store">*/}
+                  {/*    <a className="dib ph2 pv1 fw6 white tracked-mega no-underline">*/}
+                  {/*      &gt; enter store &lt;*/}
+                  {/*    </a>*/}
+                  {/*  </Link>*/}
+                  {/*</div>*/}
                 </div>
               </article>
             </div>
@@ -104,13 +104,13 @@ class Slider extends Component {
                             transform: `translateY(${style.y}px)`
                           }}
                         >
-                          Online 3D modeling
+                          Gachi or Muchi
                         </h2>
                       )}
                     </Motion>
                   ) : (
                     <h2 className="f1 f2-m fw6 tc-l tc ttu">
-                      Online 3D modeling
+                        Gachi or Muchi
                     </h2>
                   )}
                 </div>
@@ -176,12 +176,12 @@ class Slider extends Component {
                             transform: `translateY(${style.y}px)`
                           }}
                         >
-                          Customize your model
+                            Maybe Muchi Muchi?
                         </h2>
                       )}
                     </Motion>
                   ) : (
-                    <h2 className="f1 f2-m fw6 tc ttu">Customize your model</h2>
+                    <h2 className="f1 f2-m fw6 tc ttu">Maybe Muchi Muchi?</h2>
                   )}
                 </div>
               </article>

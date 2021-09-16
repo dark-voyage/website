@@ -26,7 +26,7 @@ function Store({
           <p>
             <i className="material-icons md-48 v-top">store</i>
           </p>
-          <h1 className="tc f3 mb4">Model Store</h1>
+          <h1 className="tc f3 mb4">Personal Thoughts</h1>
         </a>
         <div className="pa2 flex flex-wrap">
           {Array.isArray(products) &&

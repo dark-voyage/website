@@ -7,8 +7,6 @@ import Cookies from "js-cookie";
 import NProgress from "nprogress";
 import NProgressStyles from "nprogress/nprogress.css";
 
-import Cart from "./Cart";
-import CartSidebar from "./CartSidebar";
 import CartStyles from "../styles/cart.css";
 
 NProgress.configure({ showSpinner: false });
@@ -65,19 +63,29 @@ export default function Nav({
           <div className="w-100 w-10-l dtc-l tc tl-l v-mid">
             <Link href="/">
               <a className="link dim white dib mr3" title="Home">
-                V R S
+                G E N O
               </a>
             </Link>
           </div>
           <div className="w-100 w-90-l dtc-l tc tr-l v-mid">
-            <Link href="/store">
+            <Link href="/post">
+              <a
+                  className={`link dim white dib mr3 v-mid ${
+                      router === "/store" ? "bb" : ""
+                  }`}
+                  title="Store"
+              >
+                Me
+              </a>
+            </Link>
+            <Link href="/posts">
               <a
                 className={`link dim white dib mr3 v-mid ${
                   router === "/store" ? "bb" : ""
                 }`}
                 title="Store"
               >
-                Store
+                Posts
               </a>
             </Link>
             <Link href="/about">
@@ -97,23 +105,6 @@ export default function Nav({
               title="GitHub"
             >
               GitHub
-            </a>
-            <a
-              className="link dim white dib mr3 v-mid"
-              href="#"
-              onClick={e => {
-                e.preventDefault();
-                console.log("opening cart...");
-                toggleCartOpen(true);
-              }}
-              title="Open Cart"
-            >
-              <Cart
-                cnt={cartState && cartState.cartItems.length}
-                items={cartState && cartState.cartItems}
-              >
-                <i className="material-icons md-18">shopping_cart</i>
-              </Cart>
             </a>
             {avatarURL ? (
               <img
@@ -137,15 +128,6 @@ export default function Nav({
           </div>
         </nav>
       </header>
-      <CartSidebar
-        cartOpen={cartState.cartOpen}
-        toggleCartOpen={toggleCartOpen}
-        cartItems={cartState && cartState.cartItems}
-        incrementQuantity={incrementQuantity}
-        decrementQuantity={decrementQuantity}
-        removeFromCart={removeFromCart}
-        clearCart={clearCart}
-      />
     </div>
   );
 }

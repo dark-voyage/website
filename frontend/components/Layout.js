@@ -69,7 +69,7 @@ export default class Layout extends Component {
   }
 
   render() {
-    let { children, title = "VRS" } = this.props;
+    let { children, title = "Genemator's" } = this.props;
     return (
       <div>
         <Head>

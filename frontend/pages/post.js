@@ -3,7 +3,7 @@ import Layout from "../components/Layout";
 import Editor from "../components/Editor";
 import fetch from "isomorphic-unfetch";
 
-function Model({
+function Post({
   details,
   addToCart,
   incrementQuantity,
@@ -27,7 +27,7 @@ function Model({
   );
 }
 
-Model.getInitialProps = async function({ req, query }) {
+Post.getInitialProps = async function({ req, query }) {
   const { id } = query;
   let URL;
 
@@ -43,9 +43,9 @@ Model.getInitialProps = async function({ req, query }) {
 
   const props = {
     details: {
-      id: "1",
-      name: "Charizard",
-      description: "A friendly fire lizard Pokemon",
+      id: "10",
+      name: "Geno Ferollo",
+      description: "Extremely Dangarus Animal who breeds in a territory namely Dota!",
       price: 25
     }
   };
@@ -61,4 +61,4 @@ Model.getInitialProps = async function({ req, query }) {
   return props;
 };
 
-export default Model;
+export default Post;
