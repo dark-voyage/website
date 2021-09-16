@@ -21,71 +21,44 @@ export default function About({
       <main className="pv3 pv5-ns vh-100 white dt mw8 center">
         <div className="items-center">
           <p className="lh-copy">
-            VRS is a fully-functional e-commerce store, built on the serverless
-            paradigm.
+            Hello dear visitor! I’m Sokhibjon Orzikulov, who is famous under the nickname Genemator.
             <br />
             <br />
-            With a single command `now`, the store deploys instantly, scales
-            automatically, and requires zero supervision. The underlying
-            infrastructure can handle peak time traffic with consistent,
-            blazing-fast performance.
-          </p>
-          <p className="lh-copy" />
-          <p className="lh-copy">
-            The source-code for VRS is open-sourced on{" "}
-            <a
-              className="link dim white underline"
-              href="https://github.com/zeit/vrs"
-            >
-              GitHub
-            </a>
-            .<br />
-            You can deploy VRS to our scalable serverless infrastructure{" "}
-            <strong>free of cost</strong>.
+            I’m glad to see you visit my website. For the beginning, let me introduce myself:
             <br />
-            Thanks to the on-demand pricing model, you don’t pay a cent for
-            infrastructure during idle time.
+            I’m a Senior Full-Stack developer with more than 7 years of experience.
+            Although I professionally code using 7 different programming languages as JavaScript, TypeScript, Java, Kotlin, C, C++, Assembler, Python2, Python3.
+            I mainly use C++ for its total control and wide range of functions.
+            <br />
+            <br />
+            That said, my knowledge is not limited to coding.
+            I am also a specialist in creating 3D driven video and photo.
+            Besides, I prefer Cinema 4D as 3D engine and utilize Adobe Products for editing purposes.
+            I can also create different songs and music for my projects by using special applications on a professional level.
+            <br />
+            <br />
+            For the time being, I am a second-year student at Westminster International University in Tashkent. My nationality is Uzbek and I’m only 19 years old 😎
           </p>
           <p className="lh-copy">
-            Once you have{" "}
-            <a
-              className="link dim white underline"
-              href="https://zeit.co/download"
-            >
-              Now CLI
-            </a>{" "}
-            installed, clone the{" "}
-            <a
-              className="link dim white underline"
-              href="https://github.com/zeit/vrs"
-            >
-              VRS repo
-            </a>
-            , specify the necessary secrets with Now CLI, and run `now` — that’s
-            it. The{" "}
-            <a
-              className="link dim white underline"
-              href="https://zeit.co/blog/serverless-ecommerce#deploying-and-infrastructure"
-            >
-              deployment section
-            </a>{" "}
-            on our blog post explains how you can specify the secrets.
-          </p>
-          <p className="lh-copy">
-            Our mission at ZEIT is to make the cloud accessible to everyone. We
-            do that by creating products that improve developer experience,
-            provisioning infrastructure that is globally available, and by
-            teaching the developer community about serverless-related
-            technology. We made VRS to showcase that it’s possible to create a
-            fully functional, high-performance e-commerce store without
-            requiring infrastructure know-how. <br />
-            <br />
-            Let us know how we did on{" "}
+            Feel free to check me out on social networkings like{" "}
             <a
               className="link white underline dim"
-              href="https://twitter.com/zeithq"
+              href="https://twitter.com/genemator"
+          >
+            Twitter
+          </a>{" "}
+            <a
+                className="link white underline dim"
+                href="https://instagram.com/genemator"
             >
-              Twitter
+              Instagram
+            </a>
+            {" "}or maybe{" "}
+            <a
+                className="link white underline dim"
+                href="https://t.me/genemators"
+            >
+              Telegram
             </a>
           </p>
         </div>

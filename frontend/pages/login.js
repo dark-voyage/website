@@ -27,7 +27,7 @@ export default function Login({
     >
       <main className="pa3 pa5-ns vh-100 w-100 white dt tc">
         <p className="f4 lh-copy measure dtc v-mid">
-          <h3>Please login to add to your cart</h3>
+          <h3>Please login to manage this system</h3>
           {!isIframe ? (
             <a href="/auth/github" className="white no-underline">
               <span className="v-mid">Login with GitHub</span>

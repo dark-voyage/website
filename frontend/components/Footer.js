@@ -2,7 +2,7 @@ import ZEITLogo from "./ZEITLogo";
 
 export default function Footer() {
   return (
-    <footer className="tc bg-center pb5 w-100 relative bg-white">
+    <footer className="tc bg-center w-100 relative bg-white">
       <div className="w-100 ph3 pv4">
         <a
           className="link black bg-transparent inline-flex items-center ma2 tc br2 pa2"
@@ -47,12 +47,11 @@ export default function Footer() {
         </a>
         <br />
 
-        <a
+        <div
           className="link black inline-flex items-center ma2 tc br2 pa2"
-          href="https://zeit.co"
         >
-          <ZEITLogo dark={true} />
-        </a>
+          <ZEITLogo />
+        </div>
       </div>
     </footer>
   );

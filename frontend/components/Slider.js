@@ -104,13 +104,13 @@ class Slider extends Component {
                             transform: `translateY(${style.y}px)`
                           }}
                         >
-                          Gachi or Muchi
+                          Senior Developer
                         </h2>
                       )}
                     </Motion>
                   ) : (
                     <h2 className="f1 f2-m fw6 tc-l tc ttu">
-                        Gachi or Muchi
+                        Senior Developer
                     </h2>
                   )}
                 </div>
@@ -176,12 +176,12 @@ class Slider extends Component {
                             transform: `translateY(${style.y}px)`
                           }}
                         >
-                            Maybe Muchi Muchi?
+                            Open Source Enthusiast
                         </h2>
                       )}
                     </Motion>
                   ) : (
-                    <h2 className="f1 f2-m fw6 tc ttu">Maybe Muchi Muchi?</h2>
+                    <h2 className="f1 f2-m fw6 tc ttu">Open Source Enthusiast</h2>
                   )}
                 </div>
               </article>
@@ -206,13 +206,13 @@ class Slider extends Component {
                             transform: `translateY(${style.y}px)`
                           }}
                         >
-                          Design for virtual reality
+                          Eco System Perfectionist
                         </h2>
                       )}
                     </Motion>
                   ) : (
                     <h2 className="f1 f2-m fw6 tl-l tc ttu">
-                      Design for virtual reality
+                        Eco System Perfectionist
                     </h2>
                   )}
                 </div>
