@@ -52,7 +52,7 @@ function Posts({posts}) {
   );
 }
 
-Store.getInitialProps = async ({ req }) => {
+Posts.getInitialProps = async ({ req }) => {
   let URL;
 
   if (typeof window === "undefined") {
