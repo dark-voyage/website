@@ -68,7 +68,7 @@ export default function Nav({
             </Link>
           </div>
           <div className="w-100 w-90-l dtc-l tc tr-l v-mid">
-            <Link href="/post">
+            <Link href="/me">
               <a
                   className={`link dim white dib mr3 v-mid ${
                       router === "/store" ? "bb" : ""

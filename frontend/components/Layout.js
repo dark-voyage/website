@@ -1,4 +1,4 @@
-import { Component } from "react";
+import React, { Component } from "react";
 import Router from "next/router";
 import Link from "next/link";
 import Head from "next/head";
@@ -57,14 +57,6 @@ require("three/examples/js/controls/DeviceOrientationControls");
 
 export default class Layout extends Component {
   componentDidMount() {
-    /*
-    this.sbs = ScrollBar.initAll();
-    if (window.scrollHandlers) {
-      window.scrollHandlers.forEach(handler => {
-        this.sbs[0].addListener(handler);
-      });
-    }
-    */
     this.route = Router.router ? Router.router.pathname : "";
   }
 

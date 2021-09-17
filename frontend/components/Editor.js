@@ -1,5 +1,5 @@
 /**
- * Created by shu on 10/5/2017.
+ * Created by shu on 1/5/2017.
  */
 
 import Head from "next/head";
@@ -999,9 +999,11 @@ class Editor extends Component {
 
         <div className="description-container">
           <h1>{this.props.details.name}</h1>
-          <p>{this.props.details.description}</p>
+          {this.props.details.description.map(data => (
+              <p>{data}</p>
+          ))}
+          {/*<p>{this.props.details.description}</p>*/}
         </div>
-
         <canvas
           className="view-canvas"
           ref={canvas => (this.canvas = canvas)}
@@ -1079,13 +1081,6 @@ class Editor extends Component {
             >
               <i className="material-icons">vignette</i>
               <span className="ttu f7 mb1">VR</span>
-            </a>
-          </div>
-
-          <div className="v-mid mb3 mt4 nowrap pointer dib add-to-cart-btn">
-            <a className="pa1" onClick={this.addToCart}>
-              <i className="material-icons v-mid">add_circle_outline</i>{" "}
-              <span className="v-mid">Add to cart</span>
             </a>
           </div>
         </div>
