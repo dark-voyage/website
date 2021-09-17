@@ -13,21 +13,24 @@ passport.use(
     {
       clientID: process.env.GITHUB_CLIENT_ID,
       clientSecret: process.env.GITHUB_CLIENT_SECRET,
-      callbackURL: "https://genemator.uz/auth/github"
+      callbackURL: "https://genemator.uz/auth/github",
     },
     async function passportVerifyCallback(token, tokenSecret, profile, cb) {
       try {
-        const conn = await mongoose.createConnection(process.env.MONGODB_ATLAS_URI, {
-          bufferCommands: false,
-          bufferMaxEntries: 0
-        });
+        const conn = await mongoose.createConnection(
+          process.env.MONGODB_ATLAS_URI,
+          {
+            bufferCommands: false,
+            bufferMaxEntries: 0,
+          }
+        );
         const User = conn.model("User", UserSchema);
         User.findOrCreate(
           {
             id: profile.id,
             name: profile.displayName,
             username: profile.username,
-            avatar: profile.photos[0].value
+            avatar: profile.photos[0].value,
           },
           (err, user) => {
             if (err) {

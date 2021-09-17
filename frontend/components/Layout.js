@@ -64,7 +64,7 @@ export default class Layout extends Component {
           <title>{title}</title>
           <style
             dangerouslySetInnerHTML={{
-              __html: tachyonsStyles + scrollBarStyles + layoutStyles
+              __html: tachyonsStyles + scrollBarStyles + layoutStyles,
             }}
           />
         </Head>
@@ -77,7 +77,7 @@ export default class Layout extends Component {
           toggleCartOpen={this.props.toggleCartOpen}
         />
         <Motion defaultStyle={{ o: 0 }} style={{ o: spring(1) }}>
-          {style => (
+          {(style) => (
             <div style={{ opacity: style.o }} key="motion-content">
               {this.route === "/" && (
                 <div

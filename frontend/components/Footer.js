@@ -48,9 +48,7 @@ export default function Footer() {
         </a>
         <br />
 
-        <div
-          className="link black inline-flex items-center ma2 tc br2 pa2"
-        >
+        <div className="link black inline-flex items-center ma2 tc br2 pa2">
           <ZEITLogo />
         </div>
       </div>

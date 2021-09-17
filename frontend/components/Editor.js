@@ -24,18 +24,18 @@ const traverse = (object, callback) => {
   }
 };
 
-const objectFocus = object => {
+const objectFocus = (object) => {
   let materials =
     object.material instanceof Array ? object.material : [object.material];
-  materials.forEach(material => {
+  materials.forEach((material) => {
     material.wireframe = true;
   });
 };
 
-const objectBlur = object => {
+const objectBlur = (object) => {
   let materials =
     object.material instanceof Array ? object.material : [object.material];
-  materials.forEach(material => {
+  materials.forEach((material) => {
     material.wireframe = false;
   });
 };
@@ -62,19 +62,19 @@ THREE.FilmShader.fragmentShader = [
   "cResult = vec3( cResult.r * 0.3 + cResult.g * 0.59 + cResult.b * 0.11 );",
   "}",
   "gl_FragColor =  vec4( cResult, cTextureScreen.a );",
-  "}"
+  "}",
 ].join("\n");
 
-THREE.StereoEffect = function(renderer, composer, renderPass) {
+THREE.StereoEffect = function (renderer, composer, renderPass) {
   var _stereo = new THREE.StereoCamera();
   _stereo.aspect = 0.5;
-  this.setEyeSeparation = function(eyeSep) {
+  this.setEyeSeparation = function (eyeSep) {
     _stereo.eyeSep = eyeSep;
   };
-  this.setSize = function(width, height) {
+  this.setSize = function (width, height) {
     renderer.setSize(width, height);
   };
-  this.render = function(scene, camera) {
+  this.render = function (scene, camera) {
     scene.updateMatrixWorld();
     if (camera.parent === null) camera.updateMatrixWorld();
     _stereo.update(camera);
@@ -163,7 +163,7 @@ class Editor extends Component {
   }
 
   addToCart() {
-    capturescreen().then(url => {
+    capturescreen().then((url) => {
       this.props.addToCart({ ...this.props.details, url });
     });
   }
@@ -174,7 +174,7 @@ class Editor extends Component {
       canvas: this.canvas,
       alpha: true,
       antialias: true,
-      preserveDrawingBuffer: true
+      preserveDrawingBuffer: true,
     });
     renderer.setClearColor(0x000000, 0);
     renderer.setPixelRatio(1); //window.devicePixelRatio || 1)
@@ -197,10 +197,10 @@ class Editor extends Component {
     const raycaster = new THREE.Raycaster();
 
     window.capturescreen = () => {
-      return new Promise(resolve => {
+      return new Promise((resolve) => {
         fetch(renderer.domElement.toDataURL("image/jpeg"))
-          .then(data => data.blob())
-          .then(blob => {
+          .then((data) => data.blob())
+          .then((blob) => {
             let blobURL = URL.createObjectURL(blob);
             console.log(blobURL);
             resolve(blobURL);
@@ -241,7 +241,7 @@ class Editor extends Component {
 				gl_FragColor.a = 1.0;
       }
       `,
-      side: THREE.DoubleSide
+      side: THREE.DoubleSide,
     });
     shapeMaterial.extensions.derivatives = true;
 
@@ -250,7 +250,7 @@ class Editor extends Component {
       wireframe: true,
       opacity: 0,
       transparent: true,
-      blending: THREE.MultiplyBlending
+      blending: THREE.MultiplyBlending,
     });
 
     let textureLoader = new THREE.TextureLoader();
@@ -261,7 +261,7 @@ class Editor extends Component {
       map: sprite,
       transparent: true,
       opacity: this.pointOpacity,
-      blending: THREE.NormalBlending
+      blending: THREE.NormalBlending,
     });
     // pointsMaterial.color.setRGB(.5, 1.0, .5)
     pointsMaterial.color.setRGB(1, 1, 1);
@@ -294,7 +294,7 @@ class Editor extends Component {
       clipBias: 0.1,
       textureWidth: window.innerWidth,
       textureHeight: window.innerHeight,
-      color: 0x333333
+      color: 0x333333,
     });
     groundMirror.rotateX(-Math.PI / 2);
     groundMirror.translateZ(-0.1);
@@ -382,8 +382,8 @@ class Editor extends Component {
       this.props.details.id;
     const modelPath = `/static/models/${id}/data.js`;
 
-    return new Promise(resolve => {
-      loader.load(modelPath, result => {
+    return new Promise((resolve) => {
+      loader.load(modelPath, (result) => {
         if (result instanceof THREE.Scene) {
           this.initModelScene(result);
         } else {
@@ -437,7 +437,7 @@ class Editor extends Component {
         {
           x: pos.x + dist * 0.3,
           y: pos.y + dist * 0.3,
-          z: -dist * 1.5
+          z: -dist * 1.5,
         },
         1200
       )
@@ -498,7 +498,7 @@ class Editor extends Component {
 
     let verticesCnt = 0;
     let wireframeClone = object.clone();
-    traverse(wireframeClone, child => {
+    traverse(wireframeClone, (child) => {
       if (child instanceof THREE.Mesh) {
         let pointsGeo = new THREE.Geometry();
         pointsGeo.dynamic = true;
@@ -519,14 +519,14 @@ class Editor extends Component {
     // scene.add(wireframeClone)
 
     let shapeClone = object.clone();
-    shapeClone.traverse(child => {
+    shapeClone.traverse((child) => {
       if (child instanceof THREE.Mesh) {
         let geometry = new THREE.BufferGeometry().fromGeometry(child.geometry);
 
         let vectors = [
           new THREE.Vector3(1, 0, 0),
           new THREE.Vector3(0, 1, 0),
-          new THREE.Vector3(0, 0, 1)
+          new THREE.Vector3(0, 0, 1),
         ];
         let position = geometry.attributes.position;
         let centers = new Float32Array(position.count * 3);
@@ -543,7 +543,7 @@ class Editor extends Component {
     this.shapeObjects.push(shapeClone);
     // scene.add(shapeClone)
 
-    let changeMaterial = material => {
+    let changeMaterial = (material) => {
       material.name = "objectMaterial";
       material.polygonOffset = true;
       material.polygonOffsetFactor = -0.1;
@@ -551,7 +551,7 @@ class Editor extends Component {
       material.transparent = true;
       material.opacity = 1;
     };
-    object.traverse(child => {
+    object.traverse((child) => {
       if (child instanceof THREE.Mesh) {
         if (child.material instanceof Array) {
           child.material.forEach(changeMaterial);
@@ -575,7 +575,7 @@ class Editor extends Component {
         {
           x: -initialPosition.z,
           y: initialPosition.y,
-          z: 0
+          z: 0,
         },
         800
       )
@@ -591,7 +591,7 @@ class Editor extends Component {
         {
           x: 0,
           y: initialPosition.y,
-          z: initialPosition.z
+          z: initialPosition.z,
         },
         800
       )
@@ -607,7 +607,7 @@ class Editor extends Component {
         {
           x: 0,
           y: initialPosition.y * 2.5,
-          z: initialPosition.z * 0.1
+          z: initialPosition.z * 0.1,
         },
         800
       )
@@ -620,12 +620,12 @@ class Editor extends Component {
 
       let { scene } = this.three;
 
-      let changeMaterial = material => {
+      let changeMaterial = (material) => {
         material.transparent = true;
         material.opacity = 0;
       };
-      this.objects.forEach(object => {
-        object.traverse(child => {
+      this.objects.forEach((object) => {
+        object.traverse((child) => {
           if (child instanceof THREE.Mesh) {
             if (child.material instanceof Array) {
               child.material.forEach(changeMaterial);
@@ -637,8 +637,8 @@ class Editor extends Component {
       });
       this.materials.pointsMaterial.color.setRGB(0.5, 1.0, 0.5);
       this.materials.pointsMaterial.opacity = 1;
-      this.wireframeObjects.forEach(object => scene.add(object));
-      this.shapeObjects.forEach(object => scene.add(object));
+      this.wireframeObjects.forEach((object) => scene.add(object));
+      this.shapeObjects.forEach((object) => scene.add(object));
 
       this.initEffects();
       this.handleResize();
@@ -652,11 +652,11 @@ class Editor extends Component {
 
       let { scene } = this.three;
 
-      let changeMaterial = material => {
+      let changeMaterial = (material) => {
         material.opacity = 1;
       };
-      this.objects.forEach(object => {
-        object.traverse(child => {
+      this.objects.forEach((object) => {
+        object.traverse((child) => {
           if (child instanceof THREE.Mesh) {
             if (child.material instanceof Array) {
               child.material.forEach(changeMaterial);
@@ -668,8 +668,8 @@ class Editor extends Component {
       });
       // this.materials.pointsMaterial.color.setRGB(1, 1, 1)
       // this.materials.pointsMaterial.opacity = this.pointOpacity
-      this.wireframeObjects.forEach(object => scene.remove(object));
-      this.shapeObjects.forEach(object => scene.remove(object));
+      this.wireframeObjects.forEach((object) => scene.remove(object));
+      this.shapeObjects.forEach((object) => scene.remove(object));
 
       this.initEffects();
       this.handleResize();
@@ -716,7 +716,7 @@ class Editor extends Component {
     const { camera, raycaster, scene } = this.three;
     const mouse = {
       x: (ev.pageX / window.innerWidth) * 2 - 1,
-      y: -(ev.pageY / window.innerHeight) * 2 + 1
+      y: -(ev.pageY / window.innerHeight) * 2 + 1,
     };
 
     raycaster.setFromCamera(mouse, camera);
@@ -775,7 +775,7 @@ class Editor extends Component {
           shininesses = [],
           name = "";
 
-        material.forEach(mt => {
+        material.forEach((mt) => {
           if (mt.map instanceof THREE.Texture) {
             textures.push(mt.map.image.src);
           }
@@ -795,7 +795,7 @@ class Editor extends Component {
           name,
           refractionRatios,
           shininesses,
-          uuid: this.highlightedObject.uuid
+          uuid: this.highlightedObject.uuid,
         };
         this.setState({});
       } else {
@@ -827,7 +827,7 @@ class Editor extends Component {
       material[index].color = {
         r: color.rgb.r / 255,
         g: color.rgb.g / 255,
-        b: color.rgb.b / 255
+        b: color.rgb.b / 255,
       };
     }
   }
@@ -870,17 +870,17 @@ class Editor extends Component {
 
         <div className="description-container">
           <h1>{this.props.details.name}</h1>
-          {this.props.details.description.map(data => (
-              <p>{data}</p>
+          {this.props.details.description.map((data) => (
+            <p>{data}</p>
           ))}
           {/*<p>{this.props.details.description}</p>*/}
         </div>
         <canvas
           className="view-canvas"
-          ref={canvas => (this.canvas = canvas)}
+          ref={(canvas) => (this.canvas = canvas)}
           onClick={this.selectObject}
           onMouseDown={() => (this.mousemoved = false)}
-          onMouseMove={ev => {
+          onMouseMove={(ev) => {
             ev.persist();
             this.mousemoved = true;
             this.hoverObject(ev);
@@ -899,7 +899,7 @@ class Editor extends Component {
 
         <div
           className="control-bar fixed bottom-0 left-0 white w-100 z-999 mb3 ph4 flex items-end content-end justify-around flex-wrap"
-          onTouchMove={ev => ev.preventDefault()}
+          onTouchMove={(ev) => ev.preventDefault()}
           style={{ height: 0 }}
         >
           <div className="key-info flex items-end ml4">

@@ -2,9 +2,7 @@ import React from "react";
 import Layout from "../components/Layout";
 import Editor from "../components/Editor";
 
-function Me({
-  details
-}) {
+function Me({ details }) {
   return (
     <Layout>
       <Editor details={details} />;
@@ -12,7 +10,7 @@ function Me({
   );
 }
 
-Me.getInitialProps = async function() {
+Me.getInitialProps = async function () {
   return {
     details: {
       id: "1",
@@ -22,9 +20,9 @@ Me.getInitialProps = async function() {
         "Current Rank: #2 ",
         "Known for: #1 (from 2017 till 2020)",
         "Type: Not edible, doesn't bite",
-        "Status: Senior Developer"
-      ]
-    }
+        "Status: Senior Developer",
+      ],
+    },
   };
 };
 

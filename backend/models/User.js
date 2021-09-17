@@ -4,19 +4,19 @@ const findOrCreate = require("mongoose-findorcreate");
 const UserSchema = new mongoose.Schema({
   id: {
     type: String,
-    required: true
+    required: true,
   },
   name: {
     type: String,
-    required: true
+    required: true,
   },
   username: {
     type: String,
-    required: true
+    required: true,
   },
   avatar: {
-    type: String
-  }
+    type: String,
+  },
 });
 
 UserSchema.plugin(findOrCreate);

@@ -20,7 +20,7 @@ export default function Nav({
   cartState,
   incrementQuantity,
   decrementQuantity,
-  removeFromCart
+  removeFromCart,
 }) {
   const [router, setRouter] = useState("");
   const [username, setUsername] = useState("");
@@ -53,7 +53,7 @@ export default function Nav({
             __html:
               CartStyles +
               NProgressStyles +
-              "#nprogress .peg { display: none } #nprogress .bar { background: white; height: 3px; z-index: 10000; }"
+              "#nprogress .peg { display: none } #nprogress .bar { background: white; height: 3px; z-index: 10000; }",
           }}
         />
       </Head>
@@ -70,10 +70,10 @@ export default function Nav({
           <div className="w-100 w-90-l dtc-l tc tr-l v-mid">
             <Link href="/me">
               <a
-                  className={`link dim white dib mr3 v-mid ${
-                      router === "/store" ? "bb" : ""
-                  }`}
-                  title="Store"
+                className={`link dim white dib mr3 v-mid ${
+                  router === "/store" ? "bb" : ""
+                }`}
+                title="Store"
               >
                 Me
               </a>

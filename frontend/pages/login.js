@@ -9,7 +9,7 @@ export default function Login({
   removeFromCart,
   clearCart,
   cartState,
-  toggleCartOpen
+  toggleCartOpen,
 }) {
   const [isIframe, setIsIframe] = useState(false);
 

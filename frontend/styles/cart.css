@@ -13,7 +13,7 @@
 
 .button:hover,
 .button:focus {
-  background-color: rgb(150, 0 , 0);
+  background-color: rgb(150, 0, 0);
 }
 
 .button:disabled {
@@ -231,10 +231,10 @@
 }
 
 .add-to-cart-btn {
-    background: #0076FF;
-    padding: 10px; 
+  background: #0076ff;
+  padding: 10px;
 }
 
 .add-to-cart-btn:hover {
-    background: #0061d1;
+  background: #0061d1;
 }

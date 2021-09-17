@@ -4,10 +4,9 @@ import Layout from "../components/Layout";
 import Footer from "../components/Footer";
 import fetch from "isomorphic-unfetch";
 
-function Posts({posts}) {
+function Posts({ posts }) {
   return (
-    <Layout
-    >
+    <Layout>
       <article className="pt5 bg-black white ph3">
         <a className="link white tc">
           <p>
@@ -17,7 +16,7 @@ function Posts({posts}) {
         </a>
         <div className="pa2 flex flex-wrap">
           {Array.isArray(posts) &&
-          posts.map(post => (
+            posts.map((post) => (
               <div
                 style={{ height: "350px" }}
                 className="fl w-100 w-50-m w-33-l pa2"
@@ -33,9 +32,7 @@ function Posts({posts}) {
                     />
                     <dl className="mt2 f6 lh-copy">
                       <dt className="clip">Name</dt>
-                      <dd className="ml0 white truncate w-100">
-                        {post.name}
-                      </dd>
+                      <dd className="ml0 white truncate w-100">{post.name}</dd>
                       <dt className="clip">Description</dt>
                       <dd className="ml0 gray truncate w-100">
                         {post.description}

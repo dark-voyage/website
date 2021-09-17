@@ -15,7 +15,7 @@ app.get("*", async (req, res) => {
         // disconnected from MongoDB and send them when it reconnects.
         // With serverless, better to fail fast if not connected.
         bufferCommands: false,
-        bufferMaxEntries: 0
+        bufferMaxEntries: 0,
       }
     );
     const Model = connection.model("Model", ModelSchema);

@@ -40,7 +40,7 @@ class VRSDoc extends Document {
           .material-icons.md-24 { font-size: 24px; }
           .material-icons.md-36 { font-size: 36px; }
           .material-icons.md-48 { font-size: 48px; }
-        `
+        `,
             }}
           />
           <link

@@ -21,13 +21,13 @@ class Slider extends Component {
   constructor() {
     super();
     this.state = {
-      offset: 0
+      offset: 0,
     };
     this.scrollHandler = this.scrollHandler.bind(this);
   }
   componentDidMount() {
     window.scrollHandlers = window.scrollHandlers || [];
-    window.scrollHandlers.push(status => this.scrollHandler(status));
+    window.scrollHandlers.push((status) => this.scrollHandler(status));
 
     this.isMobi =
       window.DeviceOrientationEvent && /Mobi/.test(navigator.userAgent);
@@ -37,7 +37,7 @@ class Slider extends Component {
   }
   scrollHandler(status) {
     this.setState({
-      offset: status.offset.y || 0
+      offset: status.offset.y || 0,
     });
   }
   render() {
@@ -60,19 +60,21 @@ class Slider extends Component {
                     defaultStyle={{ y: -50, o: 0 }}
                     style={{ y: spring(0), o: spring(1) }}
                   >
-                    {style => (
+                    {(style) => (
                       <h2
                         className="f1 fw6 tc ttu f-subheadline-l mt0 mb3"
                         style={{
                           transform: `translateY(${style.y}px)`,
-                          opacity: style.o
+                          opacity: style.o,
                         }}
                       >
                         G E N E M A T O R
                       </h2>
                     )}
                   </Motion>
-                  <p className="i f5 tracked-mega-l">the true representation of pain & suffering</p>
+                  <p className="i f5 tracked-mega-l">
+                    the true representation of pain & suffering
+                  </p>
                   {/*<div className="ttu mt3 f4">*/}
                   {/*  <Link href="/store">*/}
                   {/*    <a className="dib ph2 pv1 fw6 white tracked-mega no-underline">*/}
@@ -93,11 +95,11 @@ class Slider extends Component {
                       defaultStyle={{ y: height * 0.3 }}
                       style={{ y: spring(height * 0.3 - offset * 0.3) }}
                     >
-                      {style => (
+                      {(style) => (
                         <h2
                           className="f1 f2-m fw6 tc-l tc ttu"
                           style={{
-                            transform: `translateY(${style.y}px)`
+                            transform: `translateY(${style.y}px)`,
                           }}
                         >
                           Senior Developer
@@ -106,7 +108,7 @@ class Slider extends Component {
                     </Motion>
                   ) : (
                     <h2 className="f1 f2-m fw6 tc-l tc ttu">
-                        Senior Developer
+                      Senior Developer
                     </h2>
                   )}
                 </div>
@@ -116,7 +118,7 @@ class Slider extends Component {
                   <ShowBox
                     width={Math.min(600, width)}
                     height={Math.min(600, height * 0.6)}
-                    composer={function() {
+                    composer={function () {
                       let effect = new THREE.RenderPass(
                         this.scene,
                         this.camera
@@ -139,7 +141,7 @@ class Slider extends Component {
                   <ShowBox
                     width={Math.min(600, width)}
                     height={Math.min(600, height * 0.6)}
-                    composer={function() {
+                    composer={function () {
                       let effect = new THREE.RenderPass(
                         this.scene,
                         this.camera
@@ -165,19 +167,21 @@ class Slider extends Component {
                       defaultStyle={{ y: height * 0.8 }}
                       style={{ y: spring(height * 0.8 - offset * 0.4) }}
                     >
-                      {style => (
+                      {(style) => (
                         <h2
                           className="f1 f2-m fw6 tc ttu"
                           style={{
-                            transform: `translateY(${style.y}px)`
+                            transform: `translateY(${style.y}px)`,
                           }}
                         >
-                            Open Source Enthusiast
+                          Open Source Enthusiast
                         </h2>
                       )}
                     </Motion>
                   ) : (
-                    <h2 className="f1 f2-m fw6 tc ttu">Open Source Enthusiast</h2>
+                    <h2 className="f1 f2-m fw6 tc ttu">
+                      Open Source Enthusiast
+                    </h2>
                   )}
                 </div>
               </article>
@@ -195,11 +199,11 @@ class Slider extends Component {
                       defaultStyle={{ y: height }}
                       style={{ y: spring(height - offset * 0.33) }}
                     >
-                      {style => (
+                      {(style) => (
                         <h2
                           className="f1 f2-m fw6 tl-l tc ttu"
                           style={{
-                            transform: `translateY(${style.y}px)`
+                            transform: `translateY(${style.y}px)`,
                           }}
                         >
                           Eco System Perfectionist
@@ -208,7 +212,7 @@ class Slider extends Component {
                     </Motion>
                   ) : (
                     <h2 className="f1 f2-m fw6 tl-l tc ttu">
-                        Eco System Perfectionist
+                      Eco System Perfectionist
                     </h2>
                   )}
                 </div>
@@ -221,7 +225,7 @@ class Slider extends Component {
                   <ShowBox
                     width={Math.min(600, width)}
                     height={Math.min(600, height * 0.6)}
-                    composer={function() {
+                    composer={function () {
                       let effect = new THREE.RenderPass(
                         this.scene,
                         this.camera
