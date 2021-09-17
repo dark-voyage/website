@@ -2,6 +2,7 @@
  * Created by shu on 7/5/2017.
  */
 
+import React from "react";
 import { Component } from 'react'
 
 export default class ShowBox extends Component {

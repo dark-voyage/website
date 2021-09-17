@@ -3,25 +3,11 @@ import Layout from "../components/Layout";
 import Editor from "../components/Editor";
 
 function Me({
-  details,
-  addToCart,
-  incrementQuantity,
-  decrementQuantity,
-  removeFromCart,
-  clearCart,
-  cartState,
-  toggleCartOpen
+  details
 }) {
   return (
-    <Layout
-      incrementQuantity={incrementQuantity}
-      decrementQuantity={decrementQuantity}
-      removeFromCart={removeFromCart}
-      clearCart={clearCart}
-      cartState={cartState}
-      toggleCartOpen={toggleCartOpen}
-    >
-      <Editor details={details} addToCart={addToCart} />;
+    <Layout>
+      <Editor details={details} />;
     </Layout>
   );
 }

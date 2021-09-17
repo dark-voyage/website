@@ -1,5 +1,5 @@
+import React from "react";
 import { Component } from 'react'
-
 import { ChromePicker } from 'react-color'
 import ClickOutside from 'react-click-outside'
 

@@ -1,3 +1,4 @@
+import React from "react";
 import Document, { Html, Head, Main, NextScript } from "next/document";
 
 class VRSDoc extends Document {
@@ -118,7 +119,6 @@ class VRSDoc extends Document {
             content="/static/images/favicon/ms-icon-144x144.png"
           />
           <meta name="theme-color" content="#ffffff" />
-          <script src="https://js.stripe.com/v3/" />
         </Head>
         <body>
           <Main />

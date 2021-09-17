@@ -1,23 +1,10 @@
+import React from "react";
 import Layout from "../components/Layout";
 import Footer from "../components/Footer";
 
-export default function About({
-  incrementQuantity,
-  decrementQuantity,
-  removeFromCart,
-  clearCart,
-  cartState,
-  toggleCartOpen
-}) {
+export default function About() {
   return (
-    <Layout
-      incrementQuantity={incrementQuantity}
-      decrementQuantity={decrementQuantity}
-      removeFromCart={removeFromCart}
-      clearCart={clearCart}
-      cartState={cartState}
-      toggleCartOpen={toggleCartOpen}
-    >
+    <Layout>
       <main className="pv3 pv5-ns vh-100 white dt mw8 center">
         <div className="items-center">
           <p className="lh-copy">

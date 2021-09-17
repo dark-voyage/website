@@ -29,10 +29,6 @@ const objectFocus = object => {
     object.material instanceof Array ? object.material : [object.material];
   materials.forEach(material => {
     material.wireframe = true;
-    // material.opacity = 0.8
-    // material.transparent = true
-    // material.colorBk = material.color
-    // material.color = {r: 1.4, g: 1.4, b: 1.4}
   });
 };
 
@@ -41,9 +37,6 @@ const objectBlur = object => {
     object.material instanceof Array ? object.material : [object.material];
   materials.forEach(material => {
     material.wireframe = false;
-    // material.opacity = 1
-    // material.transparent = false
-    // material.color = material.colorBk
   });
 };
 
@@ -120,7 +113,6 @@ class Editor extends Component {
     this.wireframe = false;
     this.pointOpacity = 0;
 
-    this.addToCart = this.addToCart.bind(this);
     this.renderThree = this.renderThree.bind(this);
     this.rotateToLeftView = this.rotateToLeftView.bind(this);
     this.rotateToFrontView = this.rotateToFrontView.bind(this);
@@ -138,7 +130,7 @@ class Editor extends Component {
     console.log("MODEL PROPS:", this.props);
     window.addEventListener("resize", this.handleResize);
 
-    this.isMob = window.DeviceOrientationEvent ? true : false;
+    this.isMob = !!window.DeviceOrientationEvent;
 
     this.initThree(window.innerWidth, window.innerHeight);
     this.initScene();
@@ -187,9 +179,6 @@ class Editor extends Component {
     renderer.setClearColor(0x000000, 0);
     renderer.setPixelRatio(1); //window.devicePixelRatio || 1)
     renderer.setSize(width, height);
-    // renderer.shadowMap.enabled = true
-    // renderer.shadowMap.cascade = true
-    // renderer.shadowMap.type = THREE.PCFSoftShadowMap
     renderer.gammaInput = true;
     renderer.gammaOutput = true;
 
@@ -204,21 +193,6 @@ class Editor extends Component {
     controls.enableDamping = true;
     controls.dampingFactor = 0.1;
     controls.rotateSpeed = 0.12;
-
-    /*
-    if (this.isMob) {
-      controls = new THREE.DeviceOrientationControls(camera);
-    } else {
-    
-    controls = new THREE.OrbitControls(camera, this.canvas);
-    controls.enableZoom = true;
-    controls.enablePan = false;
-    controls.enableDamping = true;
-    controls.dampingFactor = 0.1;
-    controls.rotateSpeed = 0.12;
-
-    }
-    */
 
     const raycaster = new THREE.Raycaster();
 
@@ -359,27 +333,6 @@ class Editor extends Component {
     composer.addPass(vblur);
     composer.addPass(hblur);
 
-    // effect = new THREE.ShaderPass(THREE.ColorCorrectionShader)
-    // composer.addPass(effect)
-
-    //
-    // effect = new THREE.ShaderPass(THREE.SSAOShader)
-    // effect.uniforms['tDepth'].value = depthTarget
-    // effect.uniforms['size'].value.set(window.innerWidth, window.innerHeight)
-    // effect.uniforms['cameraNear'].value = camera.near
-    // effect.uniforms['cameraFar'].value = camera.far
-    // effect.uniforms['fogEnabled'].value = 0
-    // effect.uniforms['aoClamp'].value = 0.5
-    // effect.uniforms['lumInfluence'].value = 0.59
-    // effect.material.defines = { "FLOAT_DEPTH": true }
-    // // renderer.addEffect( effect, "tDepth" )
-    // composer.addPass(effect)
-
-    // effect = new THREE.ShaderPass(THREE.VerticalBlurShader)
-    // effect.uniforms["v"].value = 1 / 4096
-    // effect.renderToScreen = true
-    // composer.addPass(effect)
-
     if (this.wireframe || this.vr) {
       effect = new THREE.ShaderPass(THREE.RGBShiftShader);
       effect.uniforms.amount.value = 0.0007;
@@ -417,46 +370,6 @@ class Editor extends Component {
       stereoEffect.setSize(window.innerWidth, window.innerHeight);
       this.stereoEffect = stereoEffect;
     }
-
-    // composer.addPass(effect)
-
-    // let outlinePass = new THREE.OutlinePass(new THREE.Vector2(window.innerWidth, window.innerHeight), scene, camera)
-    // outlinePass.edgeStrength = 3.0
-    // outlinePass.edgeGlow = 0.5
-    // outlinePass.edgeThickness = 1.0
-    // // outlinePass.renderToScreen = true
-    // composer.addPass(outlinePass)
-
-    // effect = new THREE.GlitchPass(1)
-    // effect.renderToScreen = true
-    // composer.addPass(effect)
-
-    // effect = new THREE.ShaderPass(THREE.EdgeShader)
-    // effect.uniforms.aspect.value = new THREE.Vector2(100000, 100000)
-    // effect.renderToScreen = true
-    // composer.addPass(effect)
-
-    // effect = new THREE.DotScreenPass(new THREE.Vector2(0, 0), 0.1, 0.1)
-    // composer.addPass(effect)
-
-    // effect = new THREE.ShaderPass(THREE.BleachBypassShader)
-    // effect.uniforms[ "opacity" ].value = 0.1
-    // effect.renderToScreen = true
-    // composer.addPass(effect)
-
-    // const bokehPass = new THREE.BokehPass(scene, camera, {
-    //   focus: 		0.9,
-    //   aperture:	0.01,
-    //   maxblur:	40.0,
-    //   width: window.innerWidth,
-    //   height: window.innerHeight
-    // })
-    // bokehPass.renderToScreen = true
-    // composer.addPass(bokehPass)
-
-    // this.bokehPass = bokehPass
-    // this.outlinePass = outlinePass
-    // this.outlineEffect = outlineEffect
 
     this.three.composer = composer;
   }
@@ -769,39 +682,7 @@ class Editor extends Component {
       this.switchToModel({ forceVR: true });
     }
   }
-  // autofocus(ev) {
-  //   const { camera, raycaster, scene } = this.three
-  //   const mouse = { x: (ev.pageX / window.innerWidth) * 2 - 1, y: -(ev.pageY / window.innerHeight) * 2 + 1 }
-  //
-  //   raycaster.setFromCamera(mouse, camera)
-  //
-  //   let intersects = raycaster.intersectObjects([scene], true)
-  //   let selectedObject = null
-  //
-  //   for (let i = 0; i < intersects.length; ++i) {
-  //     if (!selectedObject) {
-  //       selectedObject = intersects[i]
-  //     } else {
-  //       if (intersects[i].distance < selectedObject.distance) {
-  //         selectedObject = intersects[i]
-  //       }
-  //     }
-  //   }
-  //
-  //   // 0.516859288707892 -> 0.05
-  //   // 1.0860931634363653 -> 0.3
-  //   // 1.222386828277837 -> 0.9
-  //   // inf -> 1.0
-  //
-  //   if (selectedObject) {
-  //     // let f = Math.log(selectedObject.distance + 1) / Math.log()
-  //     let f = 1 - Math.exp(-selectedObject.distance)
-  //     console.log(f)
-  //     this.bokehPass.uniforms.focus.value = f || 1.0 //1.0
-  //   } else {
-  //     this.bokehPass.uniforms.focus.value = 1
-  //   }
-  // }
+
   selectObject(ev) {
     if (this.mousemoved) {
       return;
@@ -872,16 +753,6 @@ class Editor extends Component {
     if (selectedObject) {
       if (selectedObject.object instanceof THREE.Mesh) {
         document.body.style.cursor = "pointer";
-        // if (selectedObject.face !== this.highlightedFace) {
-        //   if (this.highlightedFace) {
-        //     this.highlightedObject.geometry.colorsNeedUpdate = true
-        //     this.highlightedFace.color.setRGB(1, 1, 1)
-        //   }
-        //   this.highlightedFace = selectedObject.face
-        //   this.highlightedObject = selectedObject.object
-        //   selectedObject.face.color.setRGB(2, 2, 2)
-        //   selectedObject.object.geometry.colorsNeedUpdate = true
-        // }
 
         let { material } = selectedObject.object;
 

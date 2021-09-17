@@ -1,3 +1,5 @@
+import React from "react";
+
 export default function LineItem({ product, incrementQuantity, decrementQuantity, removeFromCart }) {
 
   const { id, name, price, url, quantity } = product

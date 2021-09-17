@@ -100,7 +100,7 @@ export default function Nav({
             </Link>
             <a
               className="link dim white dib mr3 v-mid"
-              href="https://github.com/zeit/vrs"
+              href="https://github.com/genemators"
               target="_blank"
               title="GitHub"
             >

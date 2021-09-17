@@ -1,14 +1,10 @@
 import React, { Component } from "react";
 import Router from "next/router";
-import Link from "next/link";
 import Head from "next/head";
-
 import Nav from "./Nav";
-
 import tachyonsStyles from "tachyons/css/tachyons.min.css";
 import layoutStyles from "../styles/layout.less";
 import scrollBarStyles from "smooth-scrollbar/dist/smooth-scrollbar.css";
-
 import SliderWave from "./SliderWave";
 import ScrollIcon from "./ScrollIcon";
 import { Motion, spring } from "react-motion";

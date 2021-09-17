@@ -1,3 +1,4 @@
+import React from "react";
 import ZEITLogo from "./ZEITLogo";
 
 export default function Footer() {
