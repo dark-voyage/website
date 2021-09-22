@@ -62,7 +62,7 @@ class Slider extends Component {
                   >
                     {(style) => (
                       <h2
-                        className="f1 fw6 tc ttu f-subheadline-l mt0 mb3"
+                        className="f1 fw6 tc ttu f-subheadline-l mt0 mb3 batang"
                         style={{
                           transform: `translateY(${style.y}px)`,
                           opacity: style.o,
@@ -72,7 +72,7 @@ class Slider extends Component {
                       </h2>
                     )}
                   </Motion>
-                  <p className="i f5 tracked-mega-l">
+                  <p className="i f5 tracked-mega-l batang">
                     the true representation of pain & suffering
                   </p>
                   {/*<div className="ttu mt3 f4">*/}
@@ -134,7 +134,7 @@ class Slider extends Component {
                       )}
                     </Motion>
                   ) : (
-                    <h2 className="f1 f2-m fw6 tc ttu">
+                    <h2 className="f1 f2-m fw6 tc ttu batang">
                       An Open Source Enthusiast who is in seek of his dreams
                     </h2>
                   )}

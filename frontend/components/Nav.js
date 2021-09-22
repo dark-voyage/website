@@ -58,7 +58,7 @@ export default function Nav({
         />
       </Head>
 
-      <header>
+      <header className="batang">
         <nav className="f6 fw6 ttu tracked dt-l w-100 mw8 center">
           <div className="w-100 w-10-l dtc-l tc tl-l v-mid">
             <Link href="/">
