@@ -1,0 +1,13 @@
+{
+ "short_name": "Genemator",
+ "name": "Genemator's",
+ "lang": "en",
+ "description": "Genemator's PWA Application Website.",
+ "start_url": "/",
+ "background_color": "#000000",
+ "theme_color": "#000000",
+ "dir": "ltr",
+ "display": "standalone",
+ "orientation": "portrait",
+ "prefer_related_applications": false
+}
