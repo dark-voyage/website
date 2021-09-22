@@ -176,7 +176,7 @@ class Editor extends Component {
       antialias: true,
       preserveDrawingBuffer: true,
     });
-    renderer.setClearColor(0x000000, 0);
+    renderer.setClearColor(0xffffff, 0);
     renderer.setPixelRatio(1); //window.devicePixelRatio || 1)
     renderer.setSize(width, height);
     renderer.gammaInput = true;
@@ -274,9 +274,9 @@ class Editor extends Component {
     const { renderer } = this.three;
     const scene = new THREE.Scene();
 
-    scene.background = new THREE.Color(0x000000, 0);
+    scene.background = new THREE.Color(0xffffff);
 
-    scene.add(new THREE.GridHelper(100, 100, 0xcccccc, 0x444444));
+    scene.add(new THREE.GridHelper(100, 100, 0x030303, 0x242424));
     // scene.add(new THREE.AxisHelper(20))
 
     const light = new THREE.DirectionalLight(0xbbbbbb);
@@ -318,9 +318,9 @@ class Editor extends Component {
 
     effect = new THREE.UnrealBloomPass(
       new THREE.Vector2(window.innerWidth, window.innerHeight),
-      1.2,
+      0.2,
       1,
-      0.95
+      0.50
     );
     composer.addPass(effect);
 
@@ -863,7 +863,7 @@ class Editor extends Component {
         </Head>
 
         {!this.loaded && (
-          <div className="absolute w-100 h-100 flex white items-center justify-center">
+          <div className="absolute w-100 h-100 flex black items-center justify-center">
             <i className="material-icons mr2">hourglass_full</i>loading model...
           </div>
         )}

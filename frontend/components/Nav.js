@@ -53,7 +53,7 @@ export default function Nav({
             __html:
               CartStyles +
               NProgressStyles +
-              "#nprogress .peg { display: none } #nprogress .bar { background: white; height: 3px; z-index: 10000; }",
+              "#nprogress .peg { display: none } #nprogress .bar { background: black; height: 3px; z-index: 10000; }",
           }}
         />
       </Head>
@@ -62,7 +62,7 @@ export default function Nav({
         <nav className="f6 fw6 ttu tracked dt-l w-100 mw8 center">
           <div className="w-100 w-10-l dtc-l tc tl-l v-mid">
             <Link href="/">
-              <a className="link dim white dib mr3" title="Home">
+              <a className="link dim black dib mr3" title="Home">
                 G E N O
               </a>
             </Link>
@@ -70,7 +70,7 @@ export default function Nav({
           <div className="w-100 w-90-l dtc-l tc tr-l v-mid">
             <Link href="/me">
               <a
-                className={`link dim white dib mr3 v-mid ${
+                className={`link dim black dib mr3 v-mid ${
                   router === "/store" ? "bb" : ""
                 }`}
                 title="Store"
@@ -78,19 +78,19 @@ export default function Nav({
                 Me
               </a>
             </Link>
-            <Link href="/posts">
               <a
-                className={`link dim white dib mr3 v-mid ${
+                  target="_blank"
+                href="https://t.me/genemators"
+                className={`link dim black dib mr3 v-mid ${
                   router === "/store" ? "bb" : ""
                 }`}
                 title="Store"
               >
                 Posts
               </a>
-            </Link>
             <Link href="/about">
               <a
-                className={`link dim white dib mr3 v-mid ${
+                className={`link dim black dib mr3 v-mid ${
                   router === "/about" ? "bb" : ""
                 }`}
                 title="About"
@@ -99,7 +99,7 @@ export default function Nav({
               </a>
             </Link>
             <a
-              className="link dim white dib mr3 v-mid"
+              className="link dim black dib mr3 v-mid"
               href="https://github.com/genemators"
               target="_blank"
               title="GitHub"
@@ -108,7 +108,7 @@ export default function Nav({
             </a>
             {avatarURL ? (
               <img
-                className="link dim white dib v-mid"
+                className="link dim black dib v-mid"
                 onClick={logout}
                 src={avatarURL}
                 style={{ height: "20px", borderRadius: 100 }}
@@ -116,7 +116,7 @@ export default function Nav({
             ) : (
               <Link href="/login">
                 <a
-                  className={`link dim white dib v-mid ${
+                  className={`link dim black dib v-mid ${
                     router === "/login" ? "bb" : ""
                   }`}
                   title="Login"

@@ -55,7 +55,7 @@ class Slider extends Component {
           <Page>
             <div className="absolute w-100 vh-100">
               <article className="vh-100 dt w-100">
-                <div className="dtc v-mid tc white ph3 ph4-l">
+                <div className="dtc v-mid tc black ph3 ph4-l">
                   <Motion
                     defaultStyle={{ y: -50, o: 0 }}
                     style={{ y: spring(0), o: spring(1) }}
@@ -82,51 +82,6 @@ class Slider extends Component {
                   {/*    </a>*/}
                   {/*  </Link>*/}
                   {/*</div>*/}
-                </div>
-              </article>
-            </div>
-          </Page>
-          <Page>
-            <div className="absolute w-100 vh-100">
-              <article className="vh-100-l dt w-100 w-70-l" key="title-1">
-                <div className="dtc v-mid white ph3 ph4-l">
-                  {!this.isMobi && offset < height * 2 + 100 ? (
-                    <Motion
-                      defaultStyle={{ y: height * 0.3 }}
-                      style={{ y: spring(height * 0.3 - offset * 0.3) }}
-                    >
-                      {(style) => (
-                        <h2
-                          className="f1 f2-m fw6 tc-l tc ttu"
-                          style={{
-                            transform: `translateY(${style.y}px)`,
-                          }}
-                        >
-                          Senior Developer
-                        </h2>
-                      )}
-                    </Motion>
-                  ) : (
-                    <h2 className="f1 f2-m fw6 tc-l tc ttu">
-                      Senior Developer
-                    </h2>
-                  )}
-                </div>
-              </article>
-              <article className="vh-100-l absolute-l top-0 right-0 dt w-100 w-50-l">
-                <div className="dtc v-mid tl-l tc">
-                  <ShowBox
-                    width={Math.min(600, width)}
-                    height={Math.min(600, height * 0.6)}
-                    composer={function () {
-                      let effect = new THREE.RenderPass(
-                        this.scene,
-                        this.camera
-                      );
-                      effect.renderToScreen = true;
-                      this.composer.addPass(effect);
-                    }}
-                  />
                 </div>
               </article>
             </div>
@@ -161,7 +116,7 @@ class Slider extends Component {
                 </div>
               </article>
               <article className="vh-100-l dt w-100" key="title-2">
-                <div className="dtc v-mid white ph3 ph4-l">
+                <div className="dtc v-mid black ph3 ph4-l">
                   {!this.isMobi && offset > height - 100 ? (
                     <Motion
                       defaultStyle={{ y: height * 0.8 }}
@@ -174,71 +129,15 @@ class Slider extends Component {
                             transform: `translateY(${style.y}px)`,
                           }}
                         >
-                          Open Source Enthusiast
+                          An Open Source Enthusiast who is in seek of his dreams
                         </h2>
                       )}
                     </Motion>
                   ) : (
                     <h2 className="f1 f2-m fw6 tc ttu">
-                      Open Source Enthusiast
+                      An Open Source Enthusiast who is in seek of his dreams
                     </h2>
                   )}
-                </div>
-              </article>
-            </div>
-          </Page>
-          <Page>
-            <div className="absolute w-100 vh-100">
-              <article
-                className="vh-100-l dt w-100 w-70-l absolute-l top-0 right-0"
-                key="title-3"
-              >
-                <div className="dtc v-mid white ph3 ph4-l">
-                  {!this.isMobi && offset > height * 2 - 100 ? (
-                    <Motion
-                      defaultStyle={{ y: height }}
-                      style={{ y: spring(height - offset * 0.33) }}
-                    >
-                      {(style) => (
-                        <h2
-                          className="f1 f2-m fw6 tl-l tc ttu"
-                          style={{
-                            transform: `translateY(${style.y}px)`,
-                          }}
-                        >
-                          Eco System Perfectionist
-                        </h2>
-                      )}
-                    </Motion>
-                  ) : (
-                    <h2 className="f1 f2-m fw6 tl-l tc ttu">
-                      Eco System Perfectionist
-                    </h2>
-                  )}
-                </div>
-              </article>
-              <article
-                className="vh-100-l vh-75 dt w-100 w-50-l"
-                style={{ mixBlendMode: "screen" }}
-              >
-                <div className="dtc v-mid tr-l tc">
-                  <ShowBox
-                    width={Math.min(600, width)}
-                    height={Math.min(600, height * 0.6)}
-                    composer={function () {
-                      let effect = new THREE.RenderPass(
-                        this.scene,
-                        this.camera
-                      );
-                      // effect.renderToScreen = true
-                      this.composer.addPass(effect);
-
-                      effect = new THREE.ShaderPass(THREE.RGBShiftShader);
-                      effect.uniforms.amount.value = 0.03;
-                      effect.renderToScreen = true;
-                      this.composer.addPass(effect);
-                    }}
-                  />
                 </div>
               </article>
             </div>

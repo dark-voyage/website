@@ -109,7 +109,7 @@ export default class ScrollIcon extends Component {
         >
           <g>
             <path
-              fill="rgba(255, 255, 255, .6)"
+              fill="rgba(0, 0, 0, .6)"
               d="M72.5,231h-15C25.794,231,0,205.206,0,173.5v-116C0,25.794,25.794,0,57.5,0h15 C104.206,0,130,25.794,130,57.5v116C130,205.206,104.206,231,72.5,231z M57.5,5C28.551,5,5,28.551,5,57.5v116 C5,202.448,28.551,226,57.5,226h15c28.948,0,52.5-23.552,52.5-52.5v-116C125,28.551,101.448,5,72.5,5H57.5z"
             />
           </g>
@@ -117,7 +117,7 @@ export default class ScrollIcon extends Component {
             <circle
               fillRule="evenodd"
               clipRule="evenodd"
-              fill="#ffffff"
+              fill="#000000"
               cx="65"
               cy="42.834"
               r="12.5"

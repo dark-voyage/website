@@ -35,15 +35,14 @@ export default class ShowBox extends Component {
     this.camera.position.z = 400;
 
     this.scene = new THREE.Scene();
-    // this.scene.fog = new THREE.Fog(0x000000, 1, 1000)
 
     this.object = new THREE.Object3D();
 
     this.scene.add(this.object);
 
-    let geometry = new THREE.SphereGeometry(3, 4, 4);
+    let geometry = new THREE.SphereGeometry(3, 0, 3);
     let material = new THREE.MeshPhongMaterial({
-      color: 0xeeeeee,
+      color: 0x404040,
       shading: THREE.FlatShading,
     });
 
