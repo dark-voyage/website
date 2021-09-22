@@ -106,25 +106,25 @@ export default function Nav({
             >
               GitHub
             </a>
-            {avatarURL ? (
-              <img
-                className="link dim black dib v-mid"
-                onClick={logout}
-                src={avatarURL}
-                style={{ height: "20px", borderRadius: 100 }}
-              />
-            ) : (
-              <Link href="/login">
-                <a
-                  className={`link dim black dib v-mid ${
-                    router === "/login" ? "bb" : ""
-                  }`}
-                  title="Login"
-                >
-                  <i className="material-icons md-18">person</i>
-                </a>
-              </Link>
-            )}
+            {/*{avatarURL ? (*/}
+            {/*  <img*/}
+            {/*    className="link dim black dib v-mid"*/}
+            {/*    onClick={logout}*/}
+            {/*    src={avatarURL}*/}
+            {/*    style={{ height: "20px", borderRadius: 100 }}*/}
+            {/*  />*/}
+            {/*) : (*/}
+            {/*  <Link href="/login">*/}
+            {/*    <a*/}
+            {/*      className={`link dim black dib v-mid ${*/}
+            {/*        router === "/login" ? "bb" : ""*/}
+            {/*      }`}*/}
+            {/*      title="Login"*/}
+            {/*    >*/}
+            {/*      <i className="material-icons md-18">person</i>*/}
+            {/*    </a>*/}
+            {/*  </Link>*/}
+            {/*)}*/}
           </div>
         </nav>
       </header>
