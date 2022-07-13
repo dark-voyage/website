@@ -68,16 +68,6 @@ export default function Nav({
             </Link>
           </div>
           <div className="w-100 w-90-l dtc-l tc tr-l v-mid">
-            <Link href="/me">
-              <a
-                className={`link dim black dib mr3 v-mid ${
-                  router === "/store" ? "bb" : ""
-                }`}
-                title="Store"
-              >
-                Me
-              </a>
-            </Link>
               <a
                   target="_blank"
                 href="https://t.me/genemators"

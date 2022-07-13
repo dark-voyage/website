@@ -1,13 +1,29 @@
 import React from "react";
-import Slider from "../components/Slider";
 import Layout from "../components/Layout";
+import Editor from "../components/Editor";
 
-export default function Index() {
+function Index({ details }) {
   return (
     <Layout>
-      <section>
-        <Slider />
-      </section>
+      <Editor details={details} />;
     </Layout>
   );
 }
+
+Index.getInitialProps = async function () {
+  return {
+    details: {
+      id: "1",
+      name: "Geno Ferollo",
+      description: [
+        "Current Age: 15",
+        "Current Rank: #5 (Royal Maids) ",
+        "Known for: #1 (from 2017 till 2020)",
+        "Type: Not edible, doesn't bite",
+        "Status: Middle Developer",
+      ],
+    },
+  };
+};
+
+export default Index;
