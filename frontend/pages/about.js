@@ -8,7 +8,7 @@ export default function About() {
       <main className="pv3 pv5-ns vh-100 black dt mw8 center">
         <div className="items-center">
           <p className="lh-copy">
-            Hello dear visitor! I’m Yahyobek...
+            Hello dear visitor! I’m Yahyobek... and I was too lazy to change website infos... This is how irresponsible i am...
           </p>
           <p className="lh-copy">
             Feel free to check me out on social networkings like{" "}
